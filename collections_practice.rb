@@ -59,12 +59,15 @@ end
 
 
 def count_elements(array)
-  counter = Hash.new 0
-  elements = Hash.new 0
+  i = 0
+  counting = Hash.new(0)
+  final = Hash.new(0)
+  output = []
 
-  array.each { |element| counter[element[:name]] += 1}
-  counter.each do |i, j|
-    elements = {:name => i, :count => j}
-  end
-  return elements
-end
+  array.each { |ele| counting[ele[:name]] += 1}
+   counting.each do |i, j|
+     final = {:name => i, :count => j}
+     output << final
+   end
+   output
+ end
